@@ -60,8 +60,10 @@ function render (){
 
         let td5Element = document.createElement('td');
         trElement.appendChild(td5Element);
-        td5Element.id = i;
-        td5Element.textContent= 'X';
+        let spanElement = document.createElement('span');
+        td5Element.appendChild(spanElement);
+        spanElement.id = i;
+        spanElement.textContent= 'x';
     }
 }
 
@@ -79,7 +81,7 @@ function getData (){
     if(localStorage.data){
         let data = JSON.parse(localStorage.data);
         for(let i=0;i<data.length;i++){
-            new CreateBook(data[i].bookName,data[i].pagesNumber,data[i].category);
+            new CreateBook(data[i].bookName,data[i].numberOfPages,data[i].category);
         }
     }
 }
